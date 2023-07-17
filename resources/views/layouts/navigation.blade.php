@@ -37,18 +37,16 @@
           </x-slot>
 
           <x-slot name="content">
-            {{-- <x-dropdown-link :href="route('profile.edit')">
-              {{ __('Profile') }}
-            </x-dropdown-link> --}}
+            <x-dropdown-link :href="route('posts.index')">
+              {{ __('Posts') }}
+            </x-dropdown-link>
             <x-dropdown-link :href="route('categories.index')">
               {{ __('Categories') }}
             </x-dropdown-link>
-            {{-- <x-dropdown-link :href="route('profile.edit')">
-                            {{ __('Profile') }}
-                        </x-dropdown-link>
-                        <x-dropdown-link :href="route('profile.edit')">
-                            {{ __('Profile') }}
-                        </x-dropdown-link> --}}
+            <x-dropdown-link :href="route('tags.index')">
+              {{ __('Tags') }}
+            </x-dropdown-link>
+            <hr>
 
             <!-- Authentication -->
             <form method="POST" action="{{ route('logout') }}">
@@ -95,8 +93,14 @@
       </div>
 
       <div class="mt-3 space-y-1">
-        <x-responsive-nav-link :href="route('profile.edit')">
-          {{ __('Profile') }}
+        <x-responsive-nav-link :href="route('posts.index')">
+          {{ __('Posts') }}
+        </x-responsive-nav-link>
+        <x-responsive-nav-link :href="route('categories.index')">
+          {{ __('Categories') }}
+        </x-responsive-nav-link>
+        <x-responsive-nav-link :href="route('tags.index')">
+          {{ __('Tags') }}
         </x-responsive-nav-link>
 
         <!-- Authentication -->
