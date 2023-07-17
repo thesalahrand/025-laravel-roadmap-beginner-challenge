@@ -24,8 +24,9 @@
               @foreach ($posts as $post)
                 <article class="max-w-xs">
                   <a href="{{ route('posts.show', $post->id) }}">
-                    <img src="{{ asset('storage/' . $post->image) }}" class="mb-5 h-48 w-full object-cover rounded-lg"
-                      alt="Image 1">
+                    <img
+                      src="{{ is_null($post->image) ? 'https://placehold.co/600x400' : asset('storage/' . $post->image) }}"
+                      class="mb-5 h-48 w-full object-cover rounded-lg" alt="Image 1">
                   </a>
                   <h2 class="mb-2 text-xl font-bold leading-tight text-gray-900">
                     {{ $post->title }}

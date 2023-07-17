@@ -25,8 +25,8 @@
       <div class="p-4 sm:p-8 bg-white shadow sm:rounded-lg">
         <article>
           <h2 class="text-2xl font-medium text-gray-900">{{ $post->title }}</h2>
-          <img src="{{ asset('storage/' . $post->image) }}" class="my-6 h-96 w-full object-cover rounded-lg"
-            alt="Image 1">
+          <img src="{{ is_null($post->image) ? 'https://placehold.co/600x400' : asset('storage/' . $post->image) }}"
+            class="my-6 h-96 w-full object-cover rounded-lg" alt="Image 1">
           <p class="mb-4 font-light text-gray-500">{{ $post->full_text }}</p>
           <p class="mb-4">
             <span class="text-gray-700 font-medium">Category:</span>
